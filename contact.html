@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+  <body class="contact-page">
+  <div class="page-container">
+    <header>
+      <div class="header-flex">
+        <div class="title-stack">
+          <h1 class="main-title">JADE'S</h1>
+          <p class="subtitle">FINALS PORTFOLIO</p>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main class="zoom-in" style="animation-delay: 0.4s;">
+      <section class="text">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+          <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+          <button type="submit">Send</button>
+          <p class="success" id="response"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>© Jade's portfolio</p>
+    </footer>
+  </div>
+
+  <script>
+    // Google Apps Script Web App URL (acts like a backend to receive the form data)
+    const scriptURL = "https://script.google.com/macros/s/AKfycbx2-hOFt19aa0qP8JeBTymVXM6Q1kg1qcwrKoLb3zj54xtbv7mFVU48tzPna6IAqDKIMA/exec";
+    
+    // Get the form and response message elements from the HTML
+    const form = document.getElementById("contactForm");
+    const responseMsg = document.getElementById("response");
+
+    // When the form is submitted
+    form.addEventListener("submit", (e) => {
+      e.preventDefault(); // Prevent the default form behavior (page reload)
+
+      // Create a JavaScript object with the form values
+      const formData = {
+        name: form.name.value,
+        email: form.email.value,
+        message: form.message.value
+      };
+
+      // Send the form data to the Google Apps Script using the Fetch API
+      fetch(scriptURL, {
+        method: "POST", // HTTP method
+        body: JSON.stringify(formData), // Convert JS object to JSON string
+        headers: {
+          "Content-Type": "application/json" // Tell server you're sending JSON
+        }
+      })
+      .then(res => res.json()) // Convert the response to JSON
+      .then(data => {
+        responseMsg.textContent = "Message sent successfully!"; // Show success message
+        form.reset(); // Clear the form fields
+      })
+      .catch(error => {
+        responseMsg.textContent = "Error sending message."; // Show error message
+        console.error("Error!", error.message); // Log the error to the console
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+/* Background image */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url("images/sdg-bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Container with semi-transparent white background */
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+}
+
+/* Header styling */
+header {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.un-logo {
+  width: 80px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Sidebar goals list */
+aside {
+  background-color: #f0f8ff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+aside ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+aside ul li {
+  margin: 10px 0;
+}
+
+aside ul li a {
+  text-decoration: none;
+  color: #0077b6;
+  font-weight: bold;
+}
+
+/* SDG goal cards */
+.goal-card {
+  background-color: white;
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+}
+
+.goal-card img {
+  width: 100px;
+  height: auto;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 30px;
+  background-color: #ff4655;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #e63e4c;
+}
+

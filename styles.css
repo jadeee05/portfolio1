@@ -1,0 +1,246 @@
+/* BASE LAYOUT */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, serif;
+  color: #cccccc;
+}
+
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding: 30px;
+}
+
+/* HOME PAGE BACKGROUND */
+body.home-page {
+  background: url("images/home-bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+}
+
+/* ABOUT PAGE BACKGROUND */
+body.about-page {
+  background: url("images/about-bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+}
+
+/* CONTACT PAGE BACKGROUND */
+body.contact-page {
+  background: url("images/contact-bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+}
+
+/* HEADER COLOR CHANGE */
+body.home-page header {
+  background-color: #5f605a; 
+}
+
+body.about-page header {
+  background-color: #282e36; 
+}
+
+body.contact-page header {
+  background-color: #824d5e; 
+}
+
+
+
+
+
+
+
+
+/* HEADER LAYOUT */
+header {
+  background-color: #111;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #ff4655;
+}
+
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.title-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.main-title {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  color: white;
+  margin: 0;
+  font-family: Impact, Georgia, serif;
+}
+
+.subtitle {
+  font-size: 0.8rem;
+  color: #ff4655;
+  font-style: italic;
+  margin: 0;
+}
+
+
+
+
+
+/* HEADER NAVIGATION */
+nav {
+  margin-top: 20px; 
+  display: flex;
+  justify-content: center;
+  gap: 20px; 
+}
+
+nav a {
+  color: #ff4655;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: white;
+}
+
+
+
+
+
+/* PAGE TEXT BOXES */
+.text {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: rgba(10, 10, 10, 0.85); 
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 70, 85, 0.2);
+  color: #dddddd;
+  font-family: 'Georgia', serif;
+  line-height: 1.6;
+  text-align: center;
+}
+
+
+
+
+/* BOX TITLES */
+h2 {
+  border-bottom: 2px solid #ff4655;
+  padding-bottom: 5px;
+  color: #ff4655;
+}
+
+
+
+
+/* LAB ACT HYPERLINKS */
+.old-works {
+  list-style: square;
+  padding-left: 20px;
+}
+
+.old-works a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.old-works a:hover {
+  color: #ff4655;
+}
+
+
+
+
+/* ABOUT ME IMAGE */
+.profile-img {
+  width: 200px;
+  height: 280px;
+  border: 2px solid #ff4655;
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+  border-color: white;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+
+
+
+
+
+/* CONTACT PAGE */
+form input, form textarea,form button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 80%;
+  max-width: 400px;
+  font-family: Arial, sans-serif;
+  border-radius: 6px;
+  border: 1px solid #888;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+form button {
+  background-color: #ff4655;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #e63e4c;
+}
+
+
+
+
+
+/* FOOTER */
+footer {
+  background-color: #111;
+  text-align: center;
+  padding: 10px;
+  color: #ccc;
+}
+
+
+
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+    filter: blur(6px) brightness(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0) brightness(1);
+  }
+}
+
+.zoom-in {
+  animation: zoomIn 0.8s ease-out both;
+}
+

@@ -1,0 +1,41 @@
+/* lab2 */
+table {
+  border-collapse: collapse;
+}
+
+td {
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-family: Calibri;
+}
+.red { background-color: mistyrose; }
+.orange { background-color: moccasin; }
+.yellow { background-color: lemonchiffon; }
+.green { background-color: honeydew; }
+.blue { background-color: lightcyan; }
+.purple { background-color: lavender; }
+.gray { background-color: gray; }
+.pink { background-color: pink; }
+.peach { background-color: beige; }
+.none {
+  background-color: white;
+  border: none;
+}
+.back-button {
+  display: inline-block;
+  margin-top: 30px;
+  background-color: #ff4655;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #e63e4c;
+}
