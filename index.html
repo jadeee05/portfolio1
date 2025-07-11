@@ -44,29 +44,40 @@
       const petal = document.createElement('div');
       petal.classList.add('sakura');
 
-      // start position
       petal.style.left = Math.random() * 100 + 'vw';
       petal.style.animationDuration = 5 + Math.random() * 5 + 's';
       petal.style.opacity = Math.random();
+      petal.style.transform = `rotate(${Math.random() * 360}deg) scale(${Math.random() * 0.5 + 0.5})`;
+      petal.style.animationName = 'falling-rotate';
 
-      // sizing
       const size = Math.random() * 15 + 15;
       petal.style.width = size + 'px';
       petal.style.height = size + 'px';
 
       document.body.appendChild(petal);
 
-      // removes petals
       setTimeout(() => {
         petal.remove();
       }, 10000);
     }
 
-    // interval rate of petal spawns
     setInterval(() => {
       createSakura();
       createSakura();
     }, 300);
+
+    document.addEventListener('click', (e) => {
+    const circle = document.createElement('div');
+      circle.classList.add('meditation-circle');
+      circle.style.left = `${e.clientX - 25}px`;
+      circle.style.top = `${e.clientY - 25}px`;
+      circle.style.width = `50px`;
+      circle.style.height = `50px`;
+      circle.style.position = 'absolute';
+  
+    document.body.appendChild(circle);
+    setTimeout(() => circle.remove(), 1000);
+});
   </script>
 </body>
 
