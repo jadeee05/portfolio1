@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>About Me</title>
+  <title>Home</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-  <body class="about-page">
+
+<body class="home-page">
   <div class="page-container">
     <header>
       <div class="header-flex">
@@ -21,19 +23,51 @@
       </nav>
     </header>
 
-    <main class="zoom-in" style="animation-delay: 0.4s;">
+    <main class="zoom-in" style="animation-delay: 0.6s;">
       <section class="text">
-        <img src="images/profile.jpg" alt="My Photo" class="profile-img">
-        <h2>About Me</h2>
-           <p>Welcome to my website!</p>
-          <p>I'm Jade, an aspiring web developer currently learning HTML and design. I enjoy exploring how layout and visual style enhance user experience. With a passion for creativity and structure, I aim to build interfaces that are both clean and meaningful.</p>
+        <h2>My Previous Works</h2>
+        <ul class="old-works">
+          <li><a href="lab2.html">Lab Activity 2</a></li>
+          <li><a href="lab3.html">Lab Activity 3</a></li>
+          <li><a href="lab4.html">Lab Activity 4</a></li>
+        </ul>
       </section>
     </main>
-
 
     <footer>
       <p>© Jade's portfolio</p>
     </footer>
   </div>
+
+  <script>
+    function createSakura() {
+      const petal = document.createElement('div');
+      petal.classList.add('sakura');
+
+      // start position
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = 5 + Math.random() * 5 + 's';
+      petal.style.opacity = Math.random();
+
+      // sizing
+      const size = Math.random() * 15 + 15;
+      petal.style.width = size + 'px';
+      petal.style.height = size + 'px';
+
+      document.body.appendChild(petal);
+
+      // removes petals
+      setTimeout(() => {
+        petal.remove();
+      }, 10000);
+    }
+
+    // interval rate of petal spawns
+    setInterval(() => {
+      createSakura();
+      createSakura();
+    }, 300);
+  </script>
 </body>
+
 </html>
