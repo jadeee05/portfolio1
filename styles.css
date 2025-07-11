@@ -244,3 +244,27 @@ footer {
   animation: zoomIn 0.8s ease-out both;
 }
 
+
+.sakura {
+  position: fixed;
+  top: -50px;
+  width: 30px;
+  height: 30px;
+  background-image: url('images/sakura.png'); 
+  background-size: cover;
+  pointer-events: none;
+  z-index: 1000;
+  animation: fall linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
