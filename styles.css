@@ -268,3 +268,32 @@ footer {
     opacity: 0;
   }
 }
+
+@keyframes falling-rotate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+  }
+}
+
+
+
+
+.meditation-circle {
+  position: absolute;
+  border: 2px solid rgba(255, 200, 255, 0.6);
+  border-radius: 50%;
+  transform: scale(0);
+  animation: pulse-circle 1s ease-out forwards;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@keyframes pulse-circle {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
