@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Contact</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-  <body class="contact-page">
+
+<body class="contact-page">
   <div class="page-container">
     <header>
       <div class="header-flex">
@@ -24,12 +26,11 @@
     <main class="zoom-in" style="animation-delay: 0.4s;">
       <section class="text">
         <h2>Contact Me</h2>
-        <form id="contactForm">
+        <form id="contactForm" name="myForm">
           <input type="text" id="name" name="name" placeholder="Your Name" required>
           <input type="email" id="email" name="email" placeholder="Your Email" required>
           <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-          <button type="submit">Send</button>
-          <p class="success" id="response"></p>
+          <button type="submit" id="submit" class="btn">Send</button>
         </form>
       </section>
     </main>
@@ -40,42 +41,68 @@
   </div>
 
   <script>
-    // Google Apps Script Web App URL (acts like a backend to receive the form data)
-    const scriptURL = "https://script.google.com/macros/s/AKfycbx2-hOFt19aa0qP8JeBTymVXM6Q1kg1qcwrKoLb3zj54xtbv7mFVU48tzPna6IAqDKIMA/exec";
-    
-    // Get the form and response message elements from the HTML
-    const form = document.getElementById("contactForm");
-    const responseMsg = document.getElementById("response");
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("contactForm");
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzlrKAYRJ-CTa_bGDM-3LNHSh568Pu3u50wzr1NY7FnOn9zrfM5L_d-tNRkLTI0G1ST/exec';
 
-    // When the form is submitted
-    form.addEventListener("submit", (e) => {
-      e.preventDefault(); // Prevent the default form behavior (page reload)
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-      // Create a JavaScript object with the form values
-      const formData = {
-        name: form.name.value,
-        email: form.email.value,
-        message: form.message.value
-      };
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
 
-      // Send the form data to the Google Apps Script using the Fetch API
-      fetch(scriptURL, {
-        method: "POST", // HTTP method
-        body: JSON.stringify(formData), // Convert JS object to JSON string
-        headers: {
-          "Content-Type": "application/json" // Tell server you're sending JSON
+        if (name !== "" && email !== "" && message !== "") {
+          fetch(scriptURL, {
+            method: 'POST',
+            body: new FormData(form)
+          })
+            .then(response => {
+              alert("Your message has been sent! It will be reviewed soon.");
+              const sendAnother = confirm("Would you like to send another message?");
+              if (sendAnother) {
+                form.reset();
+              } else {
+                window.location.href = "index.html";
+              }
+            })
+            .catch(error => {
+              console.error('Error!', error.message);
+              alert("Try again later.");
+            });
+        } else {
+          alert("Please fill out all fields.");
         }
-      })
-      .then(res => res.json()) // Convert the response to JSON
-      .then(data => {
-        responseMsg.textContent = "Message sent successfully!"; // Show success message
-        form.reset(); // Clear the form fields
-      })
-      .catch(error => {
-        responseMsg.textContent = "Error sending message."; // Show error message
-        console.error("Error!", error.message); // Log the error to the console
       });
     });
+
+    function createSakura() {
+      const petal = document.createElement('div');
+      petal.classList.add('sakura');
+
+      // start position
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = 5 + Math.random() * 5 + 's';
+      petal.style.opacity = Math.random();
+
+      // sizing
+      const size = Math.random() * 15 + 15;
+      petal.style.width = size + 'px';
+      petal.style.height = size + 'px';
+
+      document.body.appendChild(petal);
+
+      // removes petals
+      setTimeout(() => {
+        petal.remove();
+      }, 10000);
+    }
+
+    setInterval(() => {
+      createSakura();
+      createSakura();
+    }, 300);
   </script>
 </body>
+
 </html>
