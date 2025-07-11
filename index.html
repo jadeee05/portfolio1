@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>My Personal Website - Home</title>
+  <title>Home</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-  <body class="home-page">
+
+<body class="home-page">
   <div class="page-container">
     <header>
       <div class="header-flex">
@@ -36,5 +38,36 @@
       <p>© Jade's portfolio</p>
     </footer>
   </div>
+
+  <script>
+    function createSakura() {
+      const petal = document.createElement('div');
+      petal.classList.add('sakura');
+
+      // start position
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = 5 + Math.random() * 5 + 's';
+      petal.style.opacity = Math.random();
+
+      // sizing
+      const size = Math.random() * 15 + 15;
+      petal.style.width = size + 'px';
+      petal.style.height = size + 'px';
+
+      document.body.appendChild(petal);
+
+      // removes petals
+      setTimeout(() => {
+        petal.remove();
+      }, 10000);
+    }
+
+    // interval rate of petal spawns
+    setInterval(() => {
+      createSakura();
+      createSakura();
+    }, 300);
+  </script>
 </body>
+
 </html>
