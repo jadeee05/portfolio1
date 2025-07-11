@@ -3,11 +3,11 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Home</title>
+  <title>About Me</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="home-page">
+<body class="about-page">
   <div class="page-container">
     <header>
       <div class="header-flex">
@@ -23,14 +23,12 @@
       </nav>
     </header>
 
-    <main class="zoom-in" style="animation-delay: 0.6s;">
+    <main class="zoom-in" style="animation-delay: 0.4s;">
       <section class="text">
-        <h2>My Previous Works</h2>
-        <ul class="old-works">
-          <li><a href="lab2.html">Lab Activity 2</a></li>
-          <li><a href="lab3.html">Lab Activity 3</a></li>
-          <li><a href="lab4.html">Lab Activity 4</a></li>
-        </ul>
+        <img src="images/profile.jpg" alt="My Photo" class="profile-img">
+        <h2>About Me</h2>
+        <p>Welcome to my website!</p>
+        <p>I'm Jade, an Information Technology student. I enjoy exploring how layout and visual style enhance user experience. With a passion for creativity and structure, I aim to build interfaces that are both clean and meaningful.</p>
       </section>
     </main>
 
@@ -62,7 +60,6 @@
       }, 10000);
     }
 
-    // interval rate of petal spawns
     setInterval(() => {
       createSakura();
       createSakura();
