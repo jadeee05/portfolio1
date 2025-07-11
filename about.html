@@ -18,19 +18,44 @@
       </div>
       <nav>
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
+        <a href="about.html">About Me</a>
         <a href="contact.html">Contact</a>
       </nav>
     </header>
 
-    <main class="zoom-in" style="animation-delay: 0.4s;">
-      <section class="text">
-        <img src="images/profile.jpg" alt="My Photo" class="profile-img">
-        <h2>About Me</h2>
-        <p>Welcome to my website!</p>
-        <p>I'm Jade, an Information Technology student. I enjoy exploring how layout and visual style enhance user experience. With a passion for creativity and structure, I aim to build interfaces that are both clean and meaningful.</p>
-      </section>
-    </main>
+<main class="zoom-in" style="animation-delay: 0.4s;">
+  <section class="text">
+    <img src="images/profile.jpg" alt="My Photo" class="profile-img">
+    <h2>About Me</h2>
+    <p>Welcome to my website!</p>
+    <p>I'm Jade DG Angeles, an Information Technology student. I enjoy exploring how layout and visual style enhance user experience. With a passion for creativity and structure, I aim to build interfaces that are both clean and meaningful.</p>
+  </section>
+
+  <section class="text">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>Bachelor of Science in Information Technology</strong><br>FEU Institute of Technology, 2023 – Present</li>
+      <li><strong>Senior High School – STEM Strand</strong><br>Baliuag University, 2021 – 2023</li>
+    </ul>
+  </section>
+
+  <section class="text">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML, CSS, JavaScript</li>
+      <li>Responsive Web Design</li>
+      <li>Basic Java and C++ Programming</li>
+      <li>Google Apps Script Integration</li>
+    </ul>
+  </section>
+
+  <section class="text">
+    <h2>Direct Contact</h2>
+    <p>Email: jadedgangeles@gmail.com</p>
+    <p>GitHub: <a href="https://github.com/jadeee05" target="_blank">github.com/jadeee05</a></p>
+  </section>
+</main>
+
 
     <footer>
       <p>© Jade's portfolio</p>
@@ -42,19 +67,18 @@
       const petal = document.createElement('div');
       petal.classList.add('sakura');
 
-      // start position
       petal.style.left = Math.random() * 100 + 'vw';
       petal.style.animationDuration = 5 + Math.random() * 5 + 's';
       petal.style.opacity = Math.random();
+      petal.style.transform = `rotate(${Math.random() * 360}deg) scale(${Math.random() * 0.5 + 0.5})`;
+      petal.style.animationName = 'falling-rotate';
 
-      // sizing
       const size = Math.random() * 15 + 15;
       petal.style.width = size + 'px';
       petal.style.height = size + 'px';
 
       document.body.appendChild(petal);
 
-      // removes petals
       setTimeout(() => {
         petal.remove();
       }, 10000);
@@ -64,6 +88,19 @@
       createSakura();
       createSakura();
     }, 300);
+
+    document.addEventListener('click', (e) => {
+    const circle = document.createElement('div');
+      circle.classList.add('meditation-circle');
+      circle.style.left = `${e.clientX - 25}px`;
+      circle.style.top = `${e.clientY - 25}px`;
+      circle.style.width = `50px`;
+      circle.style.height = `50px`;
+      circle.style.position = 'absolute';
+  
+    document.body.appendChild(circle);
+    setTimeout(() => circle.remove(), 1000);
+});
   </script>
 </body>
 
