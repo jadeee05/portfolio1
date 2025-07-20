@@ -226,7 +226,7 @@ footer {
 
 
 
-
+/** FADE IN **/
 @keyframes zoomIn {
   0% {
     opacity: 0;
@@ -244,7 +244,7 @@ footer {
   animation: zoomIn 0.8s ease-out both;
 }
 
-
+/** SAKURA ANIMATION **/
 .sakura {
   position: fixed;
   top: -50px;
@@ -280,7 +280,7 @@ footer {
 
 
 
-
+/** CLICK ANIMATION **/
 .meditation-circle {
   position: absolute;
   border: 2px solid rgba(255, 200, 255, 0.6);
@@ -296,4 +296,36 @@ footer {
     transform: scale(4);
     opacity: 0;
   }
+}
+
+
+
+
+/** BUTTON ANIMATION **/
+.button-ionia {
+  padding: 10px 20px;
+  background: #fcd5ce;
+  color: #4c2c52;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 transparent;
+}
+
+.button-ionia:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 200, 255, 0.4);
+  background: #f9c5d1;
+}
+
+
+
+
+/** INPUT BOX GLOW **/
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #d8b4f8;
+  box-shadow: 0 0 10px rgba(216, 180, 248, 0.4);
+  transition: box-shadow 0.3s ease;
 }
